@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Add Company</title>
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FULL PAGE SCROLL FIX */
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* BACKGROUND + LAYOUT */
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 0;
+
+    background: linear-gradient(270deg,#0f172a,#1e1b4b,#0b1220,#1f2937);
+    background-size: 800% 800%;
+    animation: bg 10s infinite;
+    color: white;
+}
+
+/* ANIMATION */
+@keyframes bg {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+/* FORM CONTAINER */
+.container {
+    width: 420px;
+    padding: 25px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.2);
+}
+
+/* TITLE */
+h2 {
+    text-align: center;
+    color: #00e5ff;
+    margin-bottom: 20px;
+}
+
+/* LABEL */
+label {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+
+    background: #00c6ff;
+    border: none;
+    color: white;
+
+    font-size: 16px;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0099cc;
+}
+
+/* SCROLLBAR (OPTIONAL BEAUTY) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00c6ff;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Add Company</h2>
+
+    <form action="addCompany" method="post">
+
+        <label>Company Name</label>
+        <input type="text" name="name" required>
+
+        <label>Role</label>
+        <input type="text" name="role" required>
+
+        <label>Package</label>
+        <input type="text" name="companyPackage" required>
+
+        <label>Location</label>
+        <input type="text" name="location" required>
+
+        <label>Eligibility</label>
+        <input type="text" name="eligibility" required>
+
+        <label>Drive Date</label>
+        <input type="date" name="date" required>
+
+        <button type="submit">Add Company</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

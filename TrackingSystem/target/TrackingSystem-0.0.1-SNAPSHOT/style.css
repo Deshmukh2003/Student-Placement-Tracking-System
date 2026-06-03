@@ -1,0 +1,192 @@
+@charset "ISO-8859-1";
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* GLOBAL BODY (ONLY FOR INDEX / NORMAL PAGES) */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    background-color:#0d6efd;
+}
+
+.navbar-brand{
+    color:white !important;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.nav-link{
+    color:white !important;
+    font-size:18px;
+    margin-right:15px;
+}
+
+.nav-link:hover{
+    color:yellow !important;
+}
+
+.navbar .btn,
+.btn-warning{
+    margin-right:20px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:55px;
+    font-weight:bold;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .hero h1{
+        font-size:35px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+}
+.hero .btn-primary{
+    width:auto;
+    padding:10px 25px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    padding:80px 0;
+}
+
+.about h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-weight:bold;
+    color:#0d6efd;
+}
+
+.about p{
+    font-size:18px;
+    text-align:justify;
+}
+
+/* ================= JOBS ================= */
+
+.jobs{
+    padding:100px 0;
+}
+
+.jobs h2{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:60px;
+    color:#0d6efd;
+    font-weight:bold;
+}
+
+.job-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.job-card:hover{
+    transform:scale(1.03);
+}
+
+.job-top{
+    background:#0d6efd;
+    color:white;
+    padding:25px;
+}
+
+.job-body{
+    padding:25px;
+}
+
+.job-body p{
+    margin-bottom:10px;
+    font-size:17px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* ================= AUTH PAGES ONLY (LOGIN / REGISTER) ================= */
+
+.auth-page{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#0d6efd,#6610f2,#20c997,#fd7e14);
+    background-size:400% 400%;
+    animation:bg 8s ease infinite;
+}
+
+/* animation */
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* login/register box */
+.form-box{
+    width:380px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    animation:pop 0.8s ease;
+}
+
+@keyframes pop{
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.btn-primary,
+.btn-dark{
+    width:100%;
+}
+
+
+/* ================= AUTH PAGES ONLY (Admin LOGIN /) ================= */

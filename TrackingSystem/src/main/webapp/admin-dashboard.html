@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Admin Dashboard</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* 🌈 ANIMATED RGB BACKGROUND */
+body{
+    min-height:100vh;
+    background:linear-gradient(270deg,#0f172a,#1e1b4b,#0b1220,#1f2937);
+    background-size:800% 800%;
+    animation:bgAnim 12s ease infinite;
+    color:white;
+}
+
+@keyframes bgAnim{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* SIDEBAR */
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:260px;
+    height:100vh;
+    padding:20px;
+    background:linear-gradient(180deg,#0b1220,#111827,#0f172a);
+    box-shadow:0 0 25px rgba(0,255,255,0.15);
+    overflow-y:auto;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar h2{
+    color:#00e5ff;
+    margin-bottom:25px;
+}
+
+/* DROPDOWN */
+.dropdown{
+    margin-bottom:12px;
+}
+
+.dropdown-btn{
+    width:100%;
+    padding:12px;
+    background:#111827;
+    border:none;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:0.3s;
+}
+
+.dropdown-btn:hover{
+    background:#1f2937;
+    box-shadow:0 0 12px rgba(0,255,255,0.2);
+    transform:translateX(5px);
+}
+
+.dropdown-content{
+    display:none;
+    flex-direction:column;
+    margin-left:10px;
+    margin-top:6px;
+}
+
+.dropdown-content a{
+    text-decoration:none;
+    color:#cbd5e1;
+    padding:10px;
+    margin:4px 0;
+    border-radius:8px;
+    background:#0f172a;
+    transition:0.3s;
+}
+
+.dropdown-content a:hover{
+    background:rgba(0,255,255,0.1);
+    color:#00e5ff;
+}
+
+.dropdown:hover .dropdown-content{
+    display:flex;
+}
+
+/* MAIN */
+.main{
+    margin-left:260px;
+    padding:25px;
+}
+
+/* TOPBAR */
+.topbar{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 0 15px rgba(0,255,255,0.1);
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    padding:25px;
+    border-radius:18px;
+    position:relative;
+    overflow:hidden;
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(0,255,255,0.25);
+}
+
+/* ICON */
+.icon{
+    width:55px;
+    height:55px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+/* 🌈 RGB COLORS */
+
+.blue{
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    box-shadow:0 0 15px rgba(0,198,255,0.4);
+}
+
+.purple{
+    background:linear-gradient(135deg,#a855f7,#ec4899);
+    box-shadow:0 0 15px rgba(168,85,247,0.4);
+}
+
+.green{
+    background:linear-gradient(135deg,#00f260,#0575e6);
+    box-shadow:0 0 15px rgba(0,242,96,0.4);
+}
+
+.orange{
+    background:linear-gradient(135deg,#ff512f,#f09819);
+    box-shadow:0 0 15px rgba(255,81,47,0.4);
+}
+
+.red{
+    background:linear-gradient(135deg,#ff0844,#ffb199);
+    box-shadow:0 0 15px rgba(255,8,68,0.4);
+}
+
+/* TEXT */
+.card h3{
+    color:#cbd5e1;
+    font-size:15px;
+}
+
+.card h1{
+    font-size:30px;
+    color:white;
+}
+
+/* DECOR */
+.card::after{
+    position:absolute;
+    width:10px;
+    height:120px;
+    background:rgba(0,255,255,0.08);
+    border-radius:50%;
+}
+
+/* LOGOUT */
+.sidebar-logout{
+    margin-top:auto;
+    display:block;
+    padding:10px;
+    text-align:center;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+    background-color:#00c6ff;
+}
+
+.sidebar-logout:hover{
+    background:#0099cc;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+    <h2>⚡ Admin Panel</h2>
+
+    <!-- STUDENT -->
+    <div class="dropdown">
+        <button class="dropdown-btn">
+            <span>
+                <i class="fa fa-user-graduate"></i>
+                Student
+            </span>
+
+            <i class="fa fa-angle-down"></i>
+        </button>
+
+        <div class="dropdown-content">
+            <a href="viewStudent">View Student</a>
+        </div>
+    </div>
+
+    <!-- COMPANY -->
+    <div class="dropdown">
+        <button class="dropdown-btn">
+
+            <span>
+                <i class="fa fa-building"></i>
+                Company
+            </span>
+
+            <i class="fa fa-angle-down"></i>
+
+        </button>
+
+        <div class="dropdown-content">
+            <a href="CompanyForm.html">Add Company</a>
+            <a href="viewCompany">View Company</a>
+        </div>
+    </div>
+
+    <!-- PLACEMENT -->
+    <div class="dropdown">
+        <button class="dropdown-btn">
+
+            <span>
+                <i class="fa fa-briefcase"></i>
+                Placement
+            </span>
+
+            <i class="fa fa-angle-down"></i>
+
+        </button>
+
+        <div class="dropdown-content">
+           <a href="viewSelected">Selected</a>
+			<a href="viewPending">Pending</a>
+			<a href="viewRejected">Rejected</a>
+        </div>
+    </div>
+
+    <!-- APPLICATION -->
+    <div class="dropdown">
+        <button class="dropdown-btn">
+
+            <span>
+                <i class="fa fa-file-lines"></i>
+                Applications
+            </span>
+
+            <i class="fa fa-angle-down"></i>
+
+        </button>
+
+        <div class="dropdown-content">
+            <a href="viewApplications">
+                View Applications
+            </a>
+        </div>
+    </div>
+
+    <!-- LOGOUT -->
+    <a href="index.html" class="sidebar-logout">
+        <i class="fa fa-right-from-bracket"></i>
+        Logout
+    </a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <div class="topbar">
+        <h2>Dashboard Overview</h2>
+    </div>
+
+    <!-- CARDS -->
+    <div class="cards">
+
+        <!-- STUDENTS -->
+        <div class="card">
+            <div class="icon blue">
+                <i class="fa fa-user-graduate"></i>
+            </div>
+
+            <h3>Total Students</h3>
+           <h1 id="students">0</h1>
+        </div>
+
+        <!-- COMPANIES -->
+        <div class="card">
+            <div class="icon purple">
+                <i class="fa fa-building"></i>
+            </div>
+
+            <h3>Total Companies</h3>
+            <h1 id="companies">0</h1>
+        </div>
+
+        <!-- PLACEMENTS -->
+        <div class="card">
+            <div class="icon green">
+                <i class="fa fa-trophy"></i>
+            </div>
+
+            <h3>Total Placements</h3>
+            <h1 id="placements">0</h1>
+        </div>
+
+        <!-- DRIVES -->
+        <div class="card">
+            <div class="icon orange">
+                <i class="fa fa-briefcase"></i>
+            </div>
+
+            <h3>Active Drives</h3>
+           <h1 id="drives">0</h1>
+        </div>
+
+        <!-- APPLICATIONS -->
+        <div class="card">
+            <div class="icon red">
+                <i class="fa fa-file-lines"></i>
+            </div>
+
+            <h3>Total Applications</h3>
+            <h1 id="applications">0</h1>
+        </div>
+
+    </div>
+
+</div>
+<script>
+fetch("dashboardData")
+.then(res => res.text())
+.then(data => {
+
+    let values = data.split(",");
+
+    document.getElementById("students").innerText = values[0];
+    document.getElementById("companies").innerText = values[1];
+    document.getElementById("applications").innerText = values[2];
+
+});
+</script>
+</body>
+</html>

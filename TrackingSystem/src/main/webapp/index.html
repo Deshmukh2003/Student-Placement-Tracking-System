@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Student Placement Tracking System</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial;
+    background: #f4f7fb;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+    width:100%;
+    padding:12px 30px;
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.navbar-brand{
+    color:white !important;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.navbar-nav .nav-item{
+    margin: 0 10px;
+}
+
+.navbar .nav-link{
+    color:white !important;
+    font-size:18px;
+    padding:8px 12px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.navbar .nav-link:hover{
+    background: rgba(255,255,255,0.2);
+    color: #ffeb3b !important;
+}
+
+.navbar .nav-link.active{
+    background: rgba(255,255,255,0.25);
+    color:#ffeb3b !important;
+}
+
+.btn-warning{
+    border-radius:25px;
+    font-weight:600;
+}
+
+/* ================= HERO ================= */
+.hero{
+    height:90vh;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:55px;
+    font-weight:bold;
+}
+
+/* ================= SECTION TITLES ================= */
+h2{
+    font-weight:bold;
+    color:#0d6efd;
+}
+
+/* ================= ABOUT ================= */
+.about{
+    padding:80px 0;
+}
+
+/* ================= JOBS ================= */
+
+/* ================= JOB SECTION ================= */
+
+.jobs{
+    padding:80px 0;
+    background: #f4f7fb;
+}
+
+/* JOB CARD */
+.job-card{
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.job-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* TOP HEADER (NEW GRADIENT COLOR) */
+.job-top{
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* BODY */
+.job-body{
+    padding: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* STRONG TEXT STYLE */
+.job-body b{
+    color: #0d6efd;
+}
+
+/* BUTTON STYLE */
+.job-body .btn{
+    margin-top: 15px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+.job-body .btn:hover{
+    background: #6610f2;
+    transform: scale(1.05);
+}
+
+/* ================= CONTACT ================= */
+#contact{
+    background: linear-gradient(135deg,#0d6efd,#00c6ff);
+    color:white;
+    padding:80px 20px;
+}
+
+#contact p{
+    background: rgba(255,255,255,0.15);
+    display:inline-block;
+    padding:20px;
+    border-radius:12px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+
+</head
+>
+<body>
+
+<div class="container-fluid">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+    <a class="navbar-brand">
+        <i class="bi bi-mortarboard-fill"></i> PlacementTracker
+    </a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+
+        <ul class="navbar-nav mx-auto">
+
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#jobs">Jobs</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+        </ul>
+
+        <div class="dropdown">
+            <a class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
+                Login
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="admin-login.html">👨‍💼 Admin Login</a></li>
+                <li><a class="dropdown-item" href="student-login.html">🎓 Student Login </a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Student Placement Tracking System</h1>
+        <p>Manage placements easily and professionally</p>
+        <button class="btn btn-light">Explore Jobs</button>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about container" id="about">
+    <h2 class="text-center mb-4">About Us</h2>
+    <p class="text-center">
+        This system helps colleges manage placements, students and companies efficiently.
+    </p>
+</section>
+
+<!-- JOBS -->
+<section class="jobs container" id="jobs">
+    <h2 class="text-center mb-4">Latest Jobs</h2>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="job-card">
+                <div class="job-top">Java Developer</div>
+                <div class="job-body">
+                    Infosys - Pune<br>
+                    5 LPA
+
+                    <button class="btn btn-primary w-100 mt-3">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="job-card">
+                <div class="job-top">Frontend Developer</div>
+                <div class="job-body">
+                    TCS - Mumbai<br>
+                    4.5 LPA
+
+                    <button class="btn btn-primary w-100 mt-3">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="job-card">
+                <div class="job-top">Python Developer</div>
+                <div class="job-body">
+                    Wipro - Bangalore<br>
+                    6 LPA
+
+                    <button class="btn btn-primary w-100 mt-3">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="text-center">
+    <h2 class="text-white">Contact Us</h2>
+    <p>Email: placementtracker@gmail.com | Phone: +91 9876543210</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 PlacementTracker | All Rights Reserved
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
